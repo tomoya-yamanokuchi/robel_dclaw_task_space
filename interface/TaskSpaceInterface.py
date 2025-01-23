@@ -2,12 +2,12 @@ import copy
 import numpy as np
 from .ReferencePosition import ReferencePosition
 from robel_dclaw_kinematics import ForwardKinematics
-from .utils import D_to_NTD
-from .utils import create_cyclic_data
+from ..utils import D_to_NTD
+from ..utils import create_cyclic_data
 
 
 
-class TaskSpace:
+class TaskSpaceInterface:
     def __init__(self):
         self.min                             = 0.0
         self.max                             = 1.0
@@ -29,7 +29,7 @@ class TaskSpace:
         return cyclic_normalized_cumulative_euclidean_distance
 
 
-    def task2end(self, task_space_position):
+    def task2end(self, task_space_position) -> np.ndarray:
         task_space_position = D_to_NTD(task_space_position)
         sequence, step, dim = task_space_position.shape
         assert dim == 3 # 指1本あたり1次元に拘束するので3本で3次元
