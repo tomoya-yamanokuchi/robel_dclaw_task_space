@@ -1,2 +1,3 @@
 from .ManifoldDiff2D import ManifoldDiff2D
 from .Manifold2D import Manifold2D
+from .BiasedEndEffectorPosition_2D_Plane import BiasedEndEffectorPosition_2D_Plane
