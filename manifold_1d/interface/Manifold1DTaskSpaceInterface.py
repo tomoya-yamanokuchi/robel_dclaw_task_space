@@ -7,7 +7,7 @@ from ..utils import create_cyclic_data
 
 
 
-class TaskSpaceInterface:
+class Manifold1DTaskSpaceInterface:
     def __init__(self):
         self.min                             = 0.0
         self.max                             = 1.0

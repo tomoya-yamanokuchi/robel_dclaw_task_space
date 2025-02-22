@@ -1,12 +1,13 @@
 import numpy as np
 from robel_dclaw_kinematics import ForwardKinematics
-from .. import TaskSpace
+from robel_dclaw_task_space.manifold_1d.interface import Manifold1DTaskSpaceInterface
+
 
 
 def run_tests():
     # ----
     forward_kinematics = ForwardKinematics()
-    task_space = TaskSpace()
+    task_space = Manifold1DTaskSpaceInterface()
     # ----
     num_joint             = 9
     robot_position        = np.zeros(num_joint)
