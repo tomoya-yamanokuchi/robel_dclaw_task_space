@@ -1,7 +1,8 @@
 import numpy as np
+from ...utils import AbstractTaskSpaceObject
 
 
-class Manifold1D:
+class Manifold1D(AbstractTaskSpaceObject):
     _min = 0.0
     _max = 1.0
 

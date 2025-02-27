@@ -4,10 +4,10 @@ from .ReferencePosition import ReferencePosition
 from robel_dclaw_kinematics import ForwardKinematics
 from ..utils import D_to_NTD
 from ..utils import create_cyclic_data
+from ...utils import AbstractTaskSpaceInterface
 
 
-
-class Manifold1DTaskSpaceInterface:
+class Manifold1DTaskSpaceInterface(AbstractTaskSpaceInterface):
     def __init__(self):
         self.min                             = 0.0
         self.max                             = 1.0

@@ -2,10 +2,11 @@ from dataclasses import dataclass
 import numpy as np
 from typing import Tuple
 from .ManifoldDiff2D import ManifoldDiff2D
+from ...utils import AbstractTaskSpaceObject
 
 
 @dataclass(frozen=True)
-class Manifold2D:
+class Manifold2D(AbstractTaskSpaceObject):
     value           : np.ndarray
     _min_value     : float = 0.0
     _max_value     : float = 1.0
@@ -13,14 +14,7 @@ class Manifold2D:
 
     def __post_init__(self):
         object.__setattr__(self, 'value', np.clip(self.value, self._min_value, self._max_value))
-        self._validate()
-
-    def _validate(self):
-        if not isinstance(self.value, np.ndarray):
-            raise TypeError("value must be a numpy ndarray")
-
-        if self.value.shape != self._expected_shape:
-            raise ValueError(f"Expected shape {self._expected_shape}, but got {self.value.shape}")
+        self.validate()
 
     def __eq__(self, other):
         if not isinstance(other, Manifold2D):
@@ -35,7 +29,6 @@ class Manifold2D:
     def __repr__(self):
         return (f"Manifold2D(value={self.value}, min_value={self._min_value}, "
                 f"max_value={self._max_value}, expected_shape={self._expected_shape})")
-
 
 if __name__ == '__main__':
     value1 = np.random.randn(6)

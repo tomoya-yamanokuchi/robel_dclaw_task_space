@@ -2,10 +2,11 @@ from dataclasses import dataclass
 import numpy as np
 from typing import Tuple, Optional
 from .ManifoldDiff2D import ManifoldDiff2D
+from ...utils import AbstractTaskSpaceSingeleFingerInterface
 
 
 @dataclass(frozen=True)
-class ManifoldDiff2DfromSingleFinger:
+class ManifoldDiff2DSingleFinger(AbstractTaskSpaceSingeleFingerInterface):
     value        : np.ndarray
     default_value: float = 0.0  # 指定されていない指のデフォルト値
     full_shape   : Tuple[int, ...] = (6,)  # ValueObject や ValueObjectB に合わせる

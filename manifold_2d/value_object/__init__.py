@@ -1,5 +1,5 @@
 from .ManifoldDiff2D import ManifoldDiff2D
 from .Manifold2D import Manifold2D
 from .BiasedEndEffectorPosition_2D_Plane import BiasedEndEffectorPosition_2D_Plane
-from .ManifoldDiff2DfromSingleFinger import ManifoldDiff2DfromSingleFinger
-from .Manifold2DfromSingleFinger import Manifold2DfromSingleFinger
+from .ManifoldDiff2DSingleFinger import ManifoldDiff2DSingleFinger
+from .Manifold2DSingleFinger import Manifold2DSingleFinger
