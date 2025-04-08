@@ -21,6 +21,10 @@ class Manifold1D(AbstractTaskSpaceObject):
     def __add__(self, other: 'Manifold1D'):
         return Manifold1D(self.value + other.value)
 
+    def __repr__(self):
+        return (f"Manifold1D(value={self.value}, min_value={self._min_value}, "
+                f"max_value={self._max_value}, expected_shape={self._expected_shape})")
+
     @property
     def min(self):
         return self._min
@@ -32,6 +36,7 @@ class Manifold1D(AbstractTaskSpaceObject):
     @property
     def numpy_value(self):
         return self.value
+
 
 
 if __name__ == '__main__':

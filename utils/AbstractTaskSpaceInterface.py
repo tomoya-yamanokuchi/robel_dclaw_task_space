@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from value_object import EndEffectorPosition
+from robel_dclaw_value_object import EndEffectorPosition
 from ..utils import AbstractTaskSpaceObject
 
 class AbstractTaskSpaceInterface(ABC):

@@ -1,7 +1,7 @@
 import numpy as np
 from ..value_object import Manifold2D
 from ..value_object import BiasedEndEffectorPosition_2D_Plane
-from value_object import EndEffectorPosition
+from robel_dclaw_value_object import EndEffectorPosition
 from service import normalize, denormalize
 from ...utils import AbstractTaskSpaceInterface
 

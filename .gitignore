@@ -1,3 +1,4 @@
 *.pyc
 **/*.egg-info/**
 src/robot_env/ObjectEnvFactory.py
+build
